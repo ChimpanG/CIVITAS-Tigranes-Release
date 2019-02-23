@@ -9,6 +9,7 @@
   </Properties>
   <Dependencies>
     <Mod id="e60d9e7a-9ae9-4a43-8b00-8cfa98c997e2" title="CIVITAS [ICON_GOVERNMENT] Armenia" />
+    <Mod id="4873eb62-8ccc-4574-b784-dda455e74e68" title="Expansion: Gathering Storm" />
   </Dependencies>
   <FrontEndActions>
     <UpdateArt id="ArtDep">
@@ -77,12 +78,6 @@
       </Properties>
       <File>Core/Tigranes_II_Scripts.lua</File>
     </AddGameplayScripts>
-    <UpdateDatabase id="Tigranes_XP1_DB">
-      <Properties>
-        <LoadOrder>115</LoadOrder>
-      </Properties>
-      <File>Core/Tigranes_II_UA_XP1.sql</File>
-    </UpdateDatabase>
   </InGameActions>
   <Files>
     <File>ArtDefs/LeaderFallback.artdef</File>
@@ -98,7 +93,6 @@
     <File>Core/Tigranes_II_Scripts.lua</File>
     <File>Core/Tigranes_II_Strategy.sql</File>
     <File>Core/Tigranes_II_UA.sql</File>
-    <File>Core/Tigranes_II_UA_XP1.sql</File>
     <File>Platforms/MacOS/BLPs/LeaderFallbacks.blp</File>
     <File>Platforms/MacOS/BLPs/UI/Icons.blp</File>
     <File>Platforms/Windows/BLPs/LeaderFallbacks.blp</File>

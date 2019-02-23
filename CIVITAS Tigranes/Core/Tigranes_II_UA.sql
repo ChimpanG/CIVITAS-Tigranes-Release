@@ -8,10 +8,10 @@
 -----------------------------------------------
 
 INSERT INTO	Types
-		(Type,											Kind			)
-VALUES	('TRAIT_LEADER_CVS_TIGRANES_II_UA',				'KIND_TRAIT'	),
-		('MODTYPE_CVS_TIGRANES_II_UA_ADJUST_STRENGTH',	'KIND_MODIFIER'	),
-		('MODTYPE_CVS_TIGRANES_II_UA_EXTRA_DISTRICT',	'KIND_MODIFIER'	);
+		(Type,												Kind			)
+VALUES	('TRAIT_LEADER_CVS_TIGRANES_II_UA',					'KIND_TRAIT'	),
+		('MODTYPE_CVS_TIGRANES_II_UA_ADJUST_STRENGTH',		'KIND_MODIFIER'	),
+		('MODTYPE_CVS_TIGRANES_II_UA_GRANT_INSPIRATION',	'KIND_MODIFIER'	);
 
 -----------------------------------------------
 -- Traits
@@ -36,34 +36,36 @@ VALUES	('LEADER_CVS_TIGRANES_II',	'TRAIT_LEADER_CVS_TIGRANES_II_UA'	);
 INSERT INTO	TraitModifiers
 		(TraitType,							ModifierId										)
 VALUES	('TRAIT_LEADER_CVS_TIGRANES_II_UA',	'MODIFIER_CVS_TIGRANES_II_UA_HILL_STRENGTH'		),
-		('TRAIT_LEADER_CVS_TIGRANES_II_UA',	'MODIFIER_CVS_TIGRANES_II_UA_EXTRA_DISTRICT'	);
+		('TRAIT_LEADER_CVS_TIGRANES_II_UA',	'MODIFIER_CVS_TIGRANES_II_UA_GRANT_INSPIRATION'	);
 
 -----------------------------------------------
 -- DynamicModifiers
 -----------------------------------------------
 
 INSERT INTO	DynamicModifiers
-		(ModifierType,									CollectionType,				EffectType									)
-VALUES	('MODTYPE_CVS_TIGRANES_II_UA_ADJUST_STRENGTH',	'COLLECTION_PLAYER_COMBAT',	'EFFECT_ADJUST_PLAYER_STRENGTH_MODIFIER'	),
-		('MODTYPE_CVS_TIGRANES_II_UA_EXTRA_DISTRICT',	'COLLECTION_PLAYER_CITIES',	'EFFECT_ADJUST_CITY_EXTRA_DISTRICTS'		);
+		(ModifierType,										CollectionType,				EffectType									)
+VALUES	('MODTYPE_CVS_TIGRANES_II_UA_ADJUST_STRENGTH',		'COLLECTION_PLAYER_COMBAT',	'EFFECT_ADJUST_PLAYER_STRENGTH_MODIFIER'	),
+		('MODTYPE_CVS_TIGRANES_II_UA_GRANT_INSPIRATION',	'COLLECTION_OWNER',			'EFFECT_GRANT_BOOST_WITH_GREAT_PERSON'		);
 
 -----------------------------------------------
 -- Modifiers
 -----------------------------------------------
 
 INSERT INTO	Modifiers
-		(ModifierId,									ModifierType,									SubjectRequirementSetId,						RunOnce,	Permanent	)
-VALUES	('MODIFIER_CVS_TIGRANES_II_UA_HILL_STRENGTH',	'MODTYPE_CVS_TIGRANES_II_UA_ADJUST_STRENGTH',	'REQSET_CVS_TIGRANES_II_UNIT_ON_HILLS',			0,			0			),
-		('MODIFIER_CVS_TIGRANES_II_UA_EXTRA_DISTRICT',	'MODTYPE_CVS_TIGRANES_II_UA_EXTRA_DISTRICT',	'REQSET_CVS_TIGRANES_II_CITY_HAS_ENCAMPMENT',	0,			0			);
+		(ModifierId,										ModifierType,									SubjectRequirementSetId,					RunOnce,	Permanent	)
+VALUES	('MODIFIER_CVS_TIGRANES_II_UA_HILL_STRENGTH',		'MODTYPE_CVS_TIGRANES_II_UA_ADJUST_STRENGTH',	'REQSET_CVS_TIGRANES_II_UNIT_ON_HILLS',		0,			0			),
+		('MODIFIER_CVS_TIGRANES_II_UA_GRANT_INSPIRATION',	'MODTYPE_CVS_TIGRANES_II_UA_GRANT_INSPIRATION',	NULL,										0,			0			);
 
 -----------------------------------------------
 -- ModifierArguments
 -----------------------------------------------
 
 INSERT INTO	ModifierArguments
-		(ModifierId,									Name,		Value	)
-VALUES	('MODIFIER_CVS_TIGRANES_II_UA_HILL_STRENGTH',	'Amount',	3		),
-		('MODIFIER_CVS_TIGRANES_II_UA_EXTRA_DISTRICT',	'Amount',	1		);
+		(ModifierId,										Name,				Value							)
+VALUES	('MODIFIER_CVS_TIGRANES_II_UA_HILL_STRENGTH',		'Amount',			3								),
+		('MODIFIER_CVS_TIGRANES_II_UA_GRANT_INSPIRATION',	'GreatPersonClass',	'GREAT_PERSON_CLASS_GENERAL'	),
+		('MODIFIER_CVS_TIGRANES_II_UA_GRANT_INSPIRATION',	'TechBoost',		0								),
+		('MODIFIER_CVS_TIGRANES_II_UA_GRANT_INSPIRATION',	'OtherPlayers',		0								);
 
 -----------------------------------------------
 -- ModifierStrings
